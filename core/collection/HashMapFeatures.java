@@ -3,6 +3,7 @@ package coreJava.collection.streams.maps;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -101,6 +102,24 @@ public class HashMapFeatures {
 		hashMap5.forEach((k,v)->System.out.println(k.toString() +" "+v));
 		
 
+		
+		
+		HashMap<String,Integer> hashMap6 = new HashMap<String,Integer>();
+		
+		hashMap6.put("A", 1);
+		hashMap6.put("B", 2);
+		
+		hashMap6.computeIfAbsent("C2123", k->k.length());
+		hashMap6.put("D", 1);
+		
+		hashMap6.forEach((k,v)->System.out.println(k+" "+v));
+		
+		List<String> list = List.of("Apple","Germany","Europe","Germany","Apple","Germany");
+		HashMap<String,Integer> hashMap7 = new HashMap();
+		for(String name: list) {
+			hashMap7.computeIfAbsent(name, k->0);
+			hashMap7.computeIfPresent(name, (k,v)->v+1);
+		}
+		hashMap7.forEach((k,v)-> System.out.println(k+" "+v));
 	}
-
 }
