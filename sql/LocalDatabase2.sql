@@ -151,3 +151,141 @@ select max(s.studenttotalmarks) as secondHighest from student s where s.studentt
 
 select studenttotalmarks,name from( select s.studentname as name,s.studenttotalmarks,row_number() over (order by s.studenttotalmarks desc)as rank from student s ) subquery where rank=3;
 
+
+
+
+
+
+
+create table prodcuts(
+productId number primary KEY,
+category varchar2(250)
+);
+commit;
+insert into prodcuts values(101,'Computers');
+insert into prodcuts values(102,'Computers');
+insert into prodcuts values(103,'Mobiles');
+insert into prodcuts values(104,'Computers');
+insert into prodcuts values(105,'Mobiles');
+insert into prodcuts values(106,'TV');
+insert into prodcuts values(107,'TV');
+
+select * from prodcuts ;
+
+select category ,count(*) from prodcuts 
+group by category;
+
+--Senior/Oldest employee in a  table
+select * from employee where hiredate = (select min(hiredate) from employee);
+
+
+
+select * from student ;
+select * from courses;
+select * from student_course;
+
+
+studentID studentName				CourseID	CourseName
+1	Praneeth  			            101	        German
+2	Praneeth1			            102	        English
+					
+					
+		StudentID	CourseID	Marks	
+		1	        101	        100	
+		2	        101	        90	
+        
+        
+        
+        
+        create table courses (
+        courseId number primary key,
+        courseName varchar2(250));
+        
+        insert into courses values(101,'German');
+        insert into courses values(102,'English');
+        insert into courses values(103,'Telugu');
+        insert into courses values(104,'Maths');
+        insert into courses values(105,'Hindi');
+        
+        create table student_course(
+        student_ID number,
+        courseId number,
+        marks number);
+        
+        insert into student_course values(1,101,100);
+        insert into student_course values(2,103,100);
+        insert into student_course values(3,105,100);
+        insert into student_course values(4,102,97);
+        insert into student_course values(5,104,99);
+        insert into student_course values(6,101,98);
+        
+        
+        select s.studentname,c.coursename,sc.marks from student s
+        inner join 
+           student_course  sc  on  s.student_ID = sc.student_ID
+       inner join
+        courses c  on  sc.courseId = c.courseId;
+        
+        
+
+
+select * from orders;
+
+alter table orders add orderAmount number;
+commit;
+
+update orders set orderamount ='2781' where order_id in(1,14,31,4);
+
+insert into orders values(678,5,'09-JAN-2022',8902);
+insert into orders values(679,28,'09-JAN-2021',890);
+insert into orders values(680,234,'09-JAN-2021',802);
+insert into orders values(681,902,'09-JAN-2020',902);
+insert into orders values(682,873,'09-JAN-2020',802);
+
+
+
+select extract( year from order_date) as financialYear, sum(orderamount) from orders group by extract( year from order_date);
+
+
+
+
+
+select * from employees;
+
+
+select first_name, last_name from employees where first_name like '%L%' and last_name like '%P%';
+
+
+select * from product;
+
+insert into product  values(101,'IPhone',100000);
+insert into product  values(102,'IPhone-Max',120000);
+insert into product  values(103,'IPhone-Max-Pro',150000);
+insert into product  values(104,'Samsung s26',170000);
+insert into product values(105,'Samsung-Zflip',200000);
+insert into product values(106,'Samsung-Zflip-Pro',210000);
+insert into product values(107,'Samsung-Zflip-Max',200070);
+insert into product values(108,'Samsung-Zflip-AltraPro',220000);
+insert into product values(109,'Samsung-Zflip-MinMAx',120000);
+insert into product values(110,'Samsung-Zflip-noteA',230000);
+
+select * from product order by price desc fetch first 5 rows only;
+
+create table product (
+productId number ,
+prodcutName varchar2(250),
+price number,
+constraint pk_product primary key(productId)
+);
+commit;
+
+select * from employees;
+
+
+select * from employees where extract(month from hire_date)=1;
+
+
+select * from orders;
+
+
+select count(order_id) as numberOfOrders,customer_id from orders group by customer_id order by numberOfOrders desc fetch first 5 rows only;
