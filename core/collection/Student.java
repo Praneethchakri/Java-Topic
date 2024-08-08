@@ -1,20 +1,19 @@
-package core.collection;
+package coreJava.markerInterface;
 
-import java.util.Comparator;
+import java.io.Serializable;
 
-public class Student implements Comparable<Student> {
+public class Student implements Serializable {
 
-	private int age;
+	private int id;
 	private String name;
-	private int fee;
-	private String address;
+	private String grade;
 
-	public int getAge() {
-		return age;
+	public int getId() {
+		return id;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -25,61 +24,25 @@ public class Student implements Comparable<Student> {
 		this.name = name;
 	}
 
-	public int getFee() {
-		return fee;
+	public String getGrade() {
+		return grade;
 	}
 
-	public void setFee(int fee) {
-		this.fee = fee;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public Student(int age, String name, int fee, String address) {
-		super();
-		this.age = age;
-		this.name = name;
-		this.fee = fee;
-		this.address = address;
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [age=" + age + ", name=" + name + ", fee=" + fee + ", address=" + address + "]";
+		return "Student [id=" + id + ", name=" + name + ", grade=" + grade + "]";
 	}
 
-	@Override
-	public int compareTo(Student obj) {
-		return this.age - obj.age;
+	public Student(int id, String name, String grade) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.grade = grade;
 	}
-
-	public static Comparator<Student> sortByAge = new Comparator<Student>() {
-
-		@Override
-		public int compare(Student o1, Student o2) {
-			return o1.getAge() - o2.getAge();
-		}
-	};
-	public static Comparator<Student> sortByName = new Comparator<Student>() {
-
-		@Override
-		public int compare(Student o1, Student o2) {
-			return o1.getName().compareTo(o2.getName());
-		}
-	};
 	
-	public static  Comparator<Student> sortByFee = new Comparator<Student>() {
-		
-		@Override
-		public int compare(Student o1, Student o2) {
-			return o1.getFee()-o2.getFee();
-		}
-	};
 
 }
