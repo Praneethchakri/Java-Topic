@@ -1,6 +1,8 @@
 package core.collection;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Comparator_compareSort {
@@ -13,21 +15,24 @@ public class Comparator_compareSort {
 		s[2] = new Student(10, "Suresh", 1200, "Bankok");
 		s[3] = new Student(9, "Harish", 1400, "China");
 
+		Arrays.sort(s);
+		System.out.println("Sorted Array of Students "+s);
+
 		List<Student> list = new ArrayList<Student>();
 
-		list.add(new Student(20, "TestStudnet1", 23000, "India"));
-		list.add(new Student(26, "TestStudnet2", 24000, "Germany"));
-		list.add(new Student(19, "TestStudnet3", 27000, "China"));
-		list.add(new Student(21, "TestStudnet4", 28200, "Singapour"));
-		list.add(new Student(29, "TestStudnet5", 19000, "UnitedKingdom"));
+		list.add(new Student(20, "James", 23000, "India"));
+		list.add(new Student(26, "Koner", 24000, "Germany"));
+		list.add(new Student(19, "Steive", 27000, "China"));
+		list.add(new Student(21, "Max", 28200, "Singapour"));
+		list.add(new Student(29, "Andri", 19000, "UnitedKingdom"));
 
-			list.sort(Student.sortByAge);
-			System.out.println("Sorted By Student Age "+list);
-			
+			System.out.println("Sorted By Student Grade Before"+list);
+			list.sort(Student.sortByGrade);
+			System.out.println("Sorted By Student Grade "+list);
 			list.sort(Student.sortByName);
 			System.out.println("Sorted By Student Name "+list);
-			list.sort(Student.sortByFee);
-			System.out.println("Sorted By Student Fee "+list);
+//			list.sort(Student.sortByFee);
+//			System.out.println("Sorted By Student Fee "+list);
 	}
 
 }

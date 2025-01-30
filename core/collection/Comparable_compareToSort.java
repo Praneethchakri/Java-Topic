@@ -8,10 +8,10 @@ public class Comparable_compareToSort {
 
 		Student[] s = new Student[4];
 
-		s[0] = new Student(12, "Praneeth", 1000, "Germany");
-		s[1] = new Student(11, "Ramesh", 1100, "India");
-		s[2] = new Student(10, "Suresh", 1200, "Bankok");
-		s[3] = new Student(9, "Harish", 1400, "China");
+		s[0] = new Student(12, "Praneeth",  10,"Germany");
+		s[1] = new Student(11, "Ramesh",  11,"India");
+		s[2] = new Student(10, "Suresh",12  ,"Bankok");
+		s[3] = new Student(9, "Harish", 13, "China");
 		Arrays.sort(s);
 		System.out.println(Arrays.toString(s));
 		
