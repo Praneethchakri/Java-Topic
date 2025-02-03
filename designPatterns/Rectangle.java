@@ -1,6 +1,6 @@
 package designPatterns;
 
-public class Rectangle {
+public class Rectangle implements Shape{
 
     private int height;
     private int width;
@@ -26,7 +26,9 @@ public class Rectangle {
         this.width = width;
     }
 
-    public int areaMethod(){
+
+    @Override
+    public int areaMethod() {
         return height*width;
     }
 }

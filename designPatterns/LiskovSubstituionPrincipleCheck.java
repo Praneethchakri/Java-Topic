@@ -9,16 +9,18 @@ public class LiskovSubstituionPrincipleCheck {
         System.out.println(square.areaMethod());
 
         useReactangle(rectangle);
-        useReactangle(square);
-
-
-
-    }
+        useSquare(square);
+   }
     private static void useReactangle(Rectangle rectangle){
         rectangle.setHeight(20);
         rectangle.setWidth(30);
-        assert rectangle.getHeight() == 20:"Height is not 10";
-        assert rectangle.getWidth() == 30:"width is not 20";
+        assert rectangle.getHeight() == 20:"Height is not 20";
+        assert rectangle.getWidth()  == 30:"width is not 30";
+
+    }
+    private static void useSquare(Square square){
+       square.setSide(10);
+        assert square.getSide() == 10:"Height & Width is not 20";
 
     }
 }

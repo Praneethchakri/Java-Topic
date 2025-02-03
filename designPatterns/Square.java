@@ -1,24 +1,23 @@
 package designPatterns;
 
-public class Square extends  Rectangle{
+public class Square implements Shape{
 
+    private int side;
 
     public Square(int side) {
-        super(side, side);
+        this.side=side;
     }
 
-    @Override
-    public void setHeight(int height) {
-        setSide(height);
-    }
-
-    @Override
-    public void setWidth(int width) {
-        setSide(width);
+    public int getSide() {
+        return side;
     }
 
     public void setSide(int side){
-        super.setHeight(side);
-        super.setHeight(side);
+      this.side=side;
+    }
+
+    @Override
+    public int  areaMethod() {
+        return side*side;
     }
 }
