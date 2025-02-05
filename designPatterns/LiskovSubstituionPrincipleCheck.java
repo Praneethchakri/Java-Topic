@@ -1,5 +1,10 @@
 package designPatterns;
 
+/**
+ * LiskovSubstitution Principle, where the Object of Super class should be able to replaced with Object of Subclass
+ * without affecting the correctness of the program
+ */
+
 public class LiskovSubstituionPrincipleCheck {
     public static void main(String[] args) {
 
