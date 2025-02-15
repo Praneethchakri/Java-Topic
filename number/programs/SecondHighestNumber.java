@@ -15,6 +15,7 @@ public class SecondHighestNumber {
             break;
         }
 
+
     }
         if (secondHighest != -1) {
             System.out.println("Second highest number: " + secondHighest);
