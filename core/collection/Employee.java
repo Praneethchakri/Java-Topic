@@ -37,6 +37,13 @@ public class Employee {
 		this.age = age;
 		this.salary = salary;
 	}
+	public Employee(int age,String name, long salary) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.salary = salary;
+	}
+
 
 	@Override
 	public String toString() {
