@@ -54,9 +54,9 @@ public class FlatMapinStreams {
         Map<coreJava.collection.streams.maps.Employee, String> employeeMap = employees1.stream()
                 .collect(Collectors.toMap(Function.identity(), coreJava.collection.streams.maps.Employee::getName));
         System.out.println(employeeMap);
-        Stream<Locale> streamOfLocales = Stream.of(Locale.getAvailableLocales());
-        Map<String,List<Locale>> countryToLocale = streamOfLocales .collect(Collectors.groupingBy(Locale::getCountry));
-        System.out.println(countryToLocale);
+//        Stream<Locale> streamOfLocales = Stream.of(Locale.getAvailableLocales());
+//        Map<String,List<Locale>> countryToLocale = streamOfLocales .collect(Collectors.groupingBy(Locale::getCountry));
+//        System.out.println(countryToLocale);
 
 
     }
